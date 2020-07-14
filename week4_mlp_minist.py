@@ -99,7 +99,8 @@ def train(model):
         train_loss = train_loss / len(loader_train)
         print('Epoch: {} \tTraining Loss: {:.6f}'.format(i + 1, train_loss))
 # 在数据集上测试神经网络
-def test():
+def test(model):
+    model.eval()
     correct = 0
     total = 0
     with torch.no_grad(): # 训练集中不需要反向传播
